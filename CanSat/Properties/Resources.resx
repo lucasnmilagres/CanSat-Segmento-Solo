@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Botão_gráfico_desabilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-gráfico-desabilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_habilitado_Quit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-habilitado-Quit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_home_desabilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-home-desabilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_log_desabilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-log-desabilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_mapa_desabilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-mapa-desabilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_menu_inicial_armazenamento_habilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-menu-inicial-armazenamento-habilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_menu_inicial_conexão_habilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-menu-inicial-conexão-habilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_menu_inicial_execução_habilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-menu-inicial-execução-habilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_ok_habilitado_grande" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-ok-habilitado-grande.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão_ok_habilitado_pequeno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão-ok-habilitado-pequeno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Conectado_com_sucesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Conectado-com-sucesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Conectando" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Conectando.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Deseja_sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Deseja-sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dicaPC1" xml:space="preserve">
+    <value>Estabelece a conexão via USB</value>
+  </data>
+  <data name="dicaPC2" xml:space="preserve">
+    <value>Estabelece a conexão via WiFi</value>
+  </data>
+  <data name="erroPortaSerial" xml:space="preserve">
+    <value>Erro ao tentar se conectar à porta</value>
+  </data>
+  <data name="Erro_ao_conectar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Erro-ao-conectar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Erro_dispositivo_removivel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Erro-dispositivo-removivel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconeCanastra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconeCanastra.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Janela_armazenamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Janela-armazenamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Janela_conexão" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Janela-conexão.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Janela_execução" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Janela-execução.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logConexaoFalha" xml:space="preserve">
+    <value>Erro ao tentar se conectar</value>
+  </data>
+  <data name="logConexaoSerial" xml:space="preserve">
+    <value>Conectado com êxito via Serial</value>
+  </data>
+  <data name="logConexaoWifi" xml:space="preserve">
+    <value>Conectado com êxito via WiFi</value>
+  </data>
+  <data name="logFile" xml:space="preserve">
+    <value>Log.txt</value>
+  </data>
+  <data name="Menu_Inicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu-Inicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msgSelRemovivel" xml:space="preserve">
+    <value>Por favor, selecione um dispositivo removível.</value>
+  </data>
+  <data name="pastaLocal" xml:space="preserve">
+    <value>Cansat Registros</value>
+  </data>
+  <data name="Splashscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splashscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botao_fechar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botao-fechar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botao_minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botao-minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enderecoMapa" xml:space="preserve">
+    <value>http://localhost:8080/Canastra/Teste.html</value>
+  </data>
+  <data name="localChrome" xml:space="preserve">
+    <value>C:\Program Files\Google\Chrome\Application\chrome.exe</value>
+  </data>
+  <data name="grafico_pic0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Distância.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\velocidade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aceleração.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pressão.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pressão.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tempexterna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tempexterna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\luminosidade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_pic8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\luminosidade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grafico_x0" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x1" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x2" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x3" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x4" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="grafico_x5" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x6" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="grafico_x7" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="grafico_x8" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="grafico_y0" xml:space="preserve">
+    <value>Distância (m)</value>
+  </data>
+  <data name="grafico_y1" xml:space="preserve">
+    <value>Velocidade (m/s)</value>
+  </data>
+  <data name="grafico_y2" xml:space="preserve">
+    <value>Aceleração (m/s²)</value>
+  </data>
+  <data name="grafico_y3" xml:space="preserve">
+    <value>Pressão (KPa)</value>
+  </data>
+  <data name="grafico_y4" xml:space="preserve">
+    <value>Pressão (KPa)</value>
+  </data>
+  <data name="grafico_y5" xml:space="preserve">
+    <value>Temperatura (ºC)</value>
+  </data>
+  <data name="grafico_y6" xml:space="preserve">
+    <value>Temperatura (ºC)</value>
+  </data>
+  <data name="grafico_y7" xml:space="preserve">
+    <value>Luminosidade (lux)</value>
+  </data>
+  <data name="grafico_y8" xml:space="preserve">
+    <value>Luminosidade (lux)</value>
+  </data>
+</root>

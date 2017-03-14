@@ -1,0 +1,87 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CanSat.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="enderecoRemovivel" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="nomeArquivo" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="conexao" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="numeroExecucao" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="bytesInformacao" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="msgSendSerial" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">S</Value>
+    </Setting>
+    <Setting Name="msgRcvSerial" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">K</Value>
+    </Setting>
+    <Setting Name="resLuminosidade" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.153</Value>
+    </Setting>
+    <Setting Name="resTempExt" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.472</Value>
+    </Setting>
+    <Setting Name="resTempInt" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.276</Value>
+    </Setting>
+    <Setting Name="resPressao" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.402</Value>
+    </Setting>
+    <Setting Name="resAceleracao" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="resLongitude" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.001112</Value>
+    </Setting>
+    <Setting Name="resLatitude" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.001112</Value>
+    </Setting>
+    <Setting Name="resAltitude" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.611</Value>
+    </Setting>
+    <Setting Name="resTempoH" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="resTempoM" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="resTempoS" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="resVelocidade" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.079</Value>
+    </Setting>
+    <Setting Name="origemLatitude" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">-439.653</Value>
+    </Setting>
+    <Setting Name="origemLongitude" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">-196.342</Value>
+    </Setting>
+    <Setting Name="urlEscreverDatabase" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Canastra/php/escreverDatabase.php?</Value>
+    </Setting>
+    <Setting Name="urlEscreverExecucao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="urlServidorLocal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Canastra</Value>
+    </Setting>
+    <Setting Name="prefixoImgGrafico" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">grafico_pic</Value>
+    </Setting>
+    <Setting Name="prefixoXGrafico" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">grafico_x</Value>
+    </Setting>
+    <Setting Name="prefixoYGrafico" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">grafico_y</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
