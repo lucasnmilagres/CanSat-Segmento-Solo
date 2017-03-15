@@ -83,7 +83,7 @@ namespace CanSat.Forms
             if (PC1Check.Checked)
             {
                 //Conexão Serial
-                conexao = Processamento.OpenSerial();
+                conexao = Processamento.InicializarSerial();
             }
             else if(PC2Check.Checked)
             {

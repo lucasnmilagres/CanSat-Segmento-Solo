@@ -88,15 +88,17 @@ namespace CanSat
 
         #region Funções para Serial
         //Configura a porta serial
-        public static void InicializarSerial()
+        public static int InicializarSerial()
         {
             //Configuração Serial
             serialPort = new SerialPort();
             serialPort.BaudRate = 9600;
 
-            OpenSerial();
+            int resultado = OpenSerial();
 
             serialPort.DataReceived += SerialPort_DataReceived;
+
+            return resultado;
         }
 
         //Abre a porta serial
@@ -119,7 +121,7 @@ namespace CanSat
                         serialPort.WriteLine(Properties.Settings.Default.msgSendSerial);
 
                         //Aguarda 1seg pela resposta
-                        Thread.Sleep(1000);
+                        Thread.Sleep(500);
 
                         //Recebe resposta do dispositivo
                         string msg = serialPort.ReadExisting(); //Falta verificar se o tempo de resposta é hábil
