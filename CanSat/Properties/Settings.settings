@@ -36,7 +36,7 @@
       <Value Profile="(Default)">0.402</Value>
     </Setting>
     <Setting Name="resAceleracao" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0.153</Value>
     </Setting>
     <Setting Name="resLongitude" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">0.001112</Value>

@@ -31,11 +31,10 @@ namespace CanSat
         static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, SerialPort _serialPort, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
         {
             #region Serial
-            _serialPort = serialPort;
+            //Mapa de dados
             mapaDados = new Dictionary<string, double>(14);
 
             //Adiciona os dados que serão controlados
-            mapaDados.Add("inicio", 0);
             mapaDados.Add("luminosidade", 0);
             mapaDados.Add("tempExterna", 0);
             mapaDados.Add("tempInterna", 0);
@@ -48,8 +47,11 @@ namespace CanSat
             mapaDados.Add("tempo_minuto", 0);
             mapaDados.Add("tempo_segundo", 0);
             mapaDados.Add("velocidade", 0);
-            mapaDados.Add("paridade", 0);
             mapaDados.Add("tempo_inicial", DateTime.UtcNow.Hour * 3600 + DateTime.UtcNow.Minute * 60 + DateTime.UtcNow.Second);
+
+            serialPort.DataReceived += SerialPort_DataReceived;
+
+            _serialPort = serialPort;
             #endregion
 
             #region Home
@@ -96,8 +98,6 @@ namespace CanSat
 
             int resultado = OpenSerial();
 
-            serialPort.DataReceived += SerialPort_DataReceived;
-
             return resultado;
         }
 
@@ -121,7 +121,7 @@ namespace CanSat
                         serialPort.WriteLine(Properties.Settings.Default.msgSendSerial);
 
                         //Aguarda 1seg pela resposta
-                        Thread.Sleep(500);
+                        Thread.Sleep(100);
 
                         //Recebe resposta do dispositivo
                         string msg = serialPort.ReadExisting(); //Falta verificar se o tempo de resposta é hábil
@@ -158,7 +158,6 @@ namespace CanSat
         {
             Thread tratarDadosSerial = new Thread(() => TratarDadosSerial());
             tratarDadosSerial.Start();
-            throw new NotImplementedException();
         }
 
         //Tretamento de dados da serial
@@ -166,9 +165,13 @@ namespace CanSat
         {
             try
             {
+                //Desabilita o evento de recepção enquanto processa
+                serialPort.DataReceived -= SerialPort_DataReceived;
+
                 //Lê os dados disponíveis
-                byte[] linha = new byte[serialPort.BytesToRead];
-                serialPort.Read(linha, 0, serialPort.BytesToRead - 1);
+                int linha_size = serialPort.BytesToRead;
+                byte[] linha = new byte[linha_size];
+                serialPort.Read(linha, 0, linha_size - 1);
 
                 #region Cortar a informação
                 int numLinhas = linha.Length / Properties.Settings.Default.bytesInformacao;
@@ -198,7 +201,7 @@ namespace CanSat
 
                 #region Verificação da consistência dos dados
                 int linhasPreenchidas = numLinhas;
-                for(i=0;i<numColunas;i++)
+                for(i=0;i<numLinhas;i++)
                 {
                     //Verifica se ao menos numLinhas-1 está preenchido
                     for (int j=0; j<=1 ;j++)
@@ -211,7 +214,7 @@ namespace CanSat
                     int bitsUm = 0;
                     for(int j=0; j<(numColunas-1);j++)
                     {
-                        var bitsArray = new BitArray(matriz[i][j]);
+                        var bitsArray = new BitArray(new byte[] { matriz[i][j] });
                         for(int bit=0; bit<bitsArray.Length;bit++)
                         {
                             if(bitsArray[bit]==true)
@@ -241,7 +244,6 @@ namespace CanSat
                     if(matriz[i][0]==Convert.ToInt32("11111111",2))
                     {
                         //Mapear dados
-                        mapaDados["inicio"] = BitConverter.ToInt16(matriz[i], 0);
                         mapaDados["luminosidade"] = BitConverter.ToInt16(matriz[i], 2)*Properties.Settings.Default.resLuminosidade;
                         mapaDados["tempExterna"] = BitConverter.ToChar(matriz[i], 4) * Properties.Settings.Default.resTempExt;
                         mapaDados["tempInterna"] = BitConverter.ToChar(matriz[i], 5) * Properties.Settings.Default.resTempInt;
@@ -254,7 +256,6 @@ namespace CanSat
                         mapaDados["tempo_minuto"] = BitConverter.ToChar(matriz[i], 16) * Properties.Settings.Default.resTempoM;
                         mapaDados["tempo_segundo"] = BitConverter.ToChar(matriz[i], 17) * Properties.Settings.Default.resTempoS;
                         mapaDados["velocidade"] = BitConverter.ToChar(matriz[i], 18) * Properties.Settings.Default.resVelocidade;
-                        mapaDados["paridade"] = BitConverter.ToChar(matriz[i], 19);
 
                         //Plotar dados
                         updateHome();
@@ -278,6 +279,9 @@ namespace CanSat
             {
                 registrarLog("Tratamento de dados", e.Message);
             }
+
+            //Habilita o evento de recepção após o processamento
+            serialPort.DataReceived += SerialPort_DataReceived;
         }
         #endregion
 

@@ -136,6 +136,7 @@ namespace CanSat.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.153")]
         public double resAceleracao {
             get {
                 return ((double)(this["resAceleracao"]));
