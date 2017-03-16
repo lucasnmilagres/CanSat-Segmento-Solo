@@ -665,7 +665,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Execucao";
             this.Text = "Execução";
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Execucao_MouseDoubleClick);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logBotao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapaBotao)).EndInit();

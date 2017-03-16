@@ -168,10 +168,5 @@ namespace CanSat
         }
         #endregion
         #endregion
-
-        private void Execucao_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Processamento.Teste(e.Location);
-        }
     }
 }
