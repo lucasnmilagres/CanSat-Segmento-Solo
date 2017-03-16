@@ -28,7 +28,7 @@ namespace CanSat
         private static ChartAreaCollection chartAreas;
         #endregion
 
-        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, SerialPort _serialPort, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
+        static public SerialPort Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
         {
             #region Serial
             //Mapa de dados
@@ -50,8 +50,6 @@ namespace CanSat
             mapaDados.Add("tempo_inicial", DateTime.UtcNow.Hour * 3600 + DateTime.UtcNow.Minute * 60 + DateTime.UtcNow.Second);
 
             serialPort.DataReceived += SerialPort_DataReceived;
-
-            _serialPort = serialPort;
             #endregion
 
             #region Home
@@ -86,6 +84,8 @@ namespace CanSat
             #region Mapa
             RodarMapa();
             #endregion
+
+            return serialPort;
         }
 
         #region Funções para Serial
@@ -405,7 +405,7 @@ namespace CanSat
         #region Funções para Mapa
         static public void RodarMapa()
         {
-            Process.Start(Properties.Resources.localChrome, Properties.Resources.enderecoMapa+"?CEXEC=CEXEC"+Properties.Settings.Default.numeroExecucao.ToString("00000"));
+     //       Process.Start(Properties.Resources.localChrome, Properties.Resources.enderecoMapa+"?CEXEC=CEXEC"+Properties.Settings.Default.numeroExecucao.ToString("00000"));
         }
         #endregion
 
