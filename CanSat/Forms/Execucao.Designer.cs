@@ -101,17 +101,19 @@
             this.panel1.Controls.Add(this.homeBotao);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 500);
+            this.panel1.Size = new System.Drawing.Size(188, 531);
             this.panel1.TabIndex = 0;
             // 
             // logBotao
             // 
             this.logBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.logBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logBotao.Location = new System.Drawing.Point(102, 364);
+            this.logBotao.Location = new System.Drawing.Point(129, 386);
+            this.logBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logBotao.Name = "logBotao";
-            this.logBotao.Size = new System.Drawing.Size(89, 80);
+            this.logBotao.Size = new System.Drawing.Size(71, 64);
             this.logBotao.TabIndex = 3;
             this.logBotao.TabStop = false;
             this.logBotao.Click += new System.EventHandler(this.logBotao_Click);
@@ -120,9 +122,10 @@
             // 
             this.mapaBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mapaBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mapaBotao.Location = new System.Drawing.Point(101, 267);
+            this.mapaBotao.Location = new System.Drawing.Point(129, 287);
+            this.mapaBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mapaBotao.Name = "mapaBotao";
-            this.mapaBotao.Size = new System.Drawing.Size(89, 80);
+            this.mapaBotao.Size = new System.Drawing.Size(71, 64);
             this.mapaBotao.TabIndex = 2;
             this.mapaBotao.TabStop = false;
             this.mapaBotao.Click += new System.EventHandler(this.mapaBotao_Click);
@@ -131,9 +134,10 @@
             // 
             this.graficosBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.graficosBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.graficosBotao.Location = new System.Drawing.Point(101, 172);
+            this.graficosBotao.Location = new System.Drawing.Point(129, 191);
+            this.graficosBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.graficosBotao.Name = "graficosBotao";
-            this.graficosBotao.Size = new System.Drawing.Size(89, 80);
+            this.graficosBotao.Size = new System.Drawing.Size(71, 64);
             this.graficosBotao.TabIndex = 1;
             this.graficosBotao.TabStop = false;
             this.graficosBotao.Click += new System.EventHandler(this.graficosBotao_Click);
@@ -144,9 +148,10 @@
             this.homeBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.homeBotao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homeBotao.Enabled = false;
-            this.homeBotao.Location = new System.Drawing.Point(102, 74);
+            this.homeBotao.Location = new System.Drawing.Point(129, 94);
+            this.homeBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeBotao.Name = "homeBotao";
-            this.homeBotao.Size = new System.Drawing.Size(89, 80);
+            this.homeBotao.Size = new System.Drawing.Size(71, 64);
             this.homeBotao.TabIndex = 0;
             this.homeBotao.TabStop = false;
             this.homeBotao.Click += new System.EventHandler(this.homeBotao_Click);
@@ -155,9 +160,10 @@
             // 
             this.execucaoEncerrar.BackColor = System.Drawing.Color.Transparent;
             this.execucaoEncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.execucaoEncerrar.Location = new System.Drawing.Point(669, 33);
+            this.execucaoEncerrar.Location = new System.Drawing.Point(690, 51);
+            this.execucaoEncerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.execucaoEncerrar.Name = "execucaoEncerrar";
-            this.execucaoEncerrar.Size = new System.Drawing.Size(21, 23);
+            this.execucaoEncerrar.Size = new System.Drawing.Size(17, 18);
             this.execucaoEncerrar.TabIndex = 2;
             this.execucaoEncerrar.TabStop = false;
             this.execucaoEncerrar.Click += new System.EventHandler(this.execucaoEncerrar_Click);
@@ -166,9 +172,10 @@
             // 
             this.execucaoMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.execucaoMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.execucaoMinimizar.Location = new System.Drawing.Point(629, 33);
+            this.execucaoMinimizar.Location = new System.Drawing.Point(651, 51);
+            this.execucaoMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.execucaoMinimizar.Name = "execucaoMinimizar";
-            this.execucaoMinimizar.Size = new System.Drawing.Size(23, 22);
+            this.execucaoMinimizar.Size = new System.Drawing.Size(18, 18);
             this.execucaoMinimizar.TabIndex = 3;
             this.execucaoMinimizar.TabStop = false;
             this.execucaoMinimizar.Click += new System.EventHandler(this.execucaoMinimizar_Click);
@@ -177,9 +184,10 @@
             // 
             this.home.BackColor = System.Drawing.Color.Transparent;
             this.home.Controls.Add(this.tableLayoutPanel1);
-            this.home.Location = new System.Drawing.Point(259, 136);
+            this.home.Location = new System.Drawing.Point(329, 175);
+            this.home.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(439, 305);
+            this.home.Size = new System.Drawing.Size(351, 244);
             this.home.TabIndex = 4;
             // 
             // tableLayoutPanel1
@@ -187,7 +195,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 7);
@@ -204,24 +212,25 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox7, 2, 13);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 15;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 305);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 244);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
@@ -229,9 +238,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 58);
+            this.label2.Location = new System.Drawing.Point(2, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 28);
+            this.label2.Size = new System.Drawing.Size(147, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Latitude [º]";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -241,9 +251,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 96);
+            this.label3.Location = new System.Drawing.Point(2, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 28);
+            this.label3.Size = new System.Drawing.Size(147, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Longitude [º]";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,9 +264,10 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 134);
+            this.label4.Location = new System.Drawing.Point(2, 112);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 28);
+            this.label4.Size = new System.Drawing.Size(147, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Pressão Externa [KPa]";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -265,9 +277,10 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 172);
+            this.label5.Location = new System.Drawing.Point(2, 144);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 28);
+            this.label5.Size = new System.Drawing.Size(147, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Temp. Externa [ºC]";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -277,9 +290,10 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 210);
+            this.label6.Location = new System.Drawing.Point(2, 176);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(184, 28);
+            this.label6.Size = new System.Drawing.Size(147, 24);
             this.label6.TabIndex = 5;
             this.label6.Text = "Temp. Interna [ºC]";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,9 +303,10 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 248);
+            this.label7.Location = new System.Drawing.Point(2, 208);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 28);
+            this.label7.Size = new System.Drawing.Size(147, 24);
             this.label7.TabIndex = 6;
             this.label7.Text = "Velocidade [m/s]";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,10 +314,11 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(220, 61);
+            this.textBox2.Location = new System.Drawing.Point(174, 50);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(216, 22);
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
             this.textBox2.TabIndex = 8;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -311,9 +327,10 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Location = new System.Drawing.Point(2, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 28);
+            this.label1.Size = new System.Drawing.Size(147, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Luminosidade [lux]";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,60 +338,66 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(220, 23);
+            this.textBox1.Location = new System.Drawing.Point(174, 18);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(216, 22);
+            this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox3
             // 
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(220, 99);
+            this.textBox3.Location = new System.Drawing.Point(174, 82);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(216, 22);
+            this.textBox3.Size = new System.Drawing.Size(175, 20);
             this.textBox3.TabIndex = 9;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox4
             // 
             this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(220, 137);
+            this.textBox4.Location = new System.Drawing.Point(174, 114);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(216, 22);
+            this.textBox4.Size = new System.Drawing.Size(175, 20);
             this.textBox4.TabIndex = 10;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox5
             // 
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(220, 175);
+            this.textBox5.Location = new System.Drawing.Point(174, 146);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(216, 22);
+            this.textBox5.Size = new System.Drawing.Size(175, 20);
             this.textBox5.TabIndex = 11;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox6
             // 
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(220, 213);
+            this.textBox6.Location = new System.Drawing.Point(174, 178);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(216, 22);
+            this.textBox6.Size = new System.Drawing.Size(175, 20);
             this.textBox6.TabIndex = 12;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox7
             // 
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(220, 251);
+            this.textBox7.Location = new System.Drawing.Point(174, 210);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(216, 22);
+            this.textBox7.Size = new System.Drawing.Size(175, 20);
             this.textBox7.TabIndex = 13;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -382,9 +405,10 @@
             // 
             this.graficos.BackColor = System.Drawing.Color.Transparent;
             this.graficos.Controls.Add(this.chart1);
-            this.graficos.Location = new System.Drawing.Point(259, 136);
+            this.graficos.Location = new System.Drawing.Point(329, 175);
+            this.graficos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.graficos.Name = "graficos";
-            this.graficos.Size = new System.Drawing.Size(439, 305);
+            this.graficos.Size = new System.Drawing.Size(351, 244);
             this.graficos.TabIndex = 5;
             this.graficos.Visible = false;
             // 
@@ -528,6 +552,7 @@
             this.chart1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -595,7 +620,7 @@
             this.chart1.Series.Add(series7);
             this.chart1.Series.Add(series8);
             this.chart1.Series.Add(series9);
-            this.chart1.Size = new System.Drawing.Size(439, 305);
+            this.chart1.Size = new System.Drawing.Size(351, 244);
             this.chart1.TabIndex = 1;
             this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
@@ -603,18 +628,20 @@
             // 
             this.mapa.BackColor = System.Drawing.Color.Transparent;
             this.mapa.Controls.Add(this.rodar_mapa);
-            this.mapa.Location = new System.Drawing.Point(255, 134);
+            this.mapa.Location = new System.Drawing.Point(326, 173);
+            this.mapa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mapa.Name = "mapa";
-            this.mapa.Size = new System.Drawing.Size(462, 310);
+            this.mapa.Size = new System.Drawing.Size(370, 248);
             this.mapa.TabIndex = 6;
             this.mapa.Visible = false;
             // 
             // rodar_mapa
             // 
             this.rodar_mapa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rodar_mapa.Location = new System.Drawing.Point(179, 120);
+            this.rodar_mapa.Location = new System.Drawing.Point(143, 96);
+            this.rodar_mapa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rodar_mapa.Name = "rodar_mapa";
-            this.rodar_mapa.Size = new System.Drawing.Size(100, 50);
+            this.rodar_mapa.Size = new System.Drawing.Size(80, 40);
             this.rodar_mapa.TabIndex = 0;
             this.rodar_mapa.TabStop = false;
             this.rodar_mapa.Click += new System.EventHandler(this.rodar_mapa_Click);
@@ -623,9 +650,10 @@
             // 
             this.log.BackColor = System.Drawing.Color.Transparent;
             this.log.Controls.Add(this.logTexto);
-            this.log.Location = new System.Drawing.Point(313, 139);
+            this.log.Location = new System.Drawing.Point(372, 177);
+            this.log.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(356, 299);
+            this.log.Size = new System.Drawing.Size(285, 239);
             this.log.TabIndex = 7;
             this.log.Visible = false;
             // 
@@ -637,22 +665,23 @@
             this.logTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logTexto.ForeColor = System.Drawing.Color.White;
             this.logTexto.Location = new System.Drawing.Point(0, 0);
+            this.logTexto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logTexto.Name = "logTexto";
             this.logTexto.ReadOnly = true;
             this.logTexto.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.logTexto.Size = new System.Drawing.Size(356, 299);
+            this.logTexto.Size = new System.Drawing.Size(285, 239);
             this.logTexto.TabIndex = 0;
             this.logTexto.Text = "";
             this.logTexto.TextChanged += new System.EventHandler(this.logTexto_TextChanged);
             // 
             // Execucao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImage = global::CanSat.Properties.Resources.Janela_execução;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(838, 531);
             this.Controls.Add(this.graficos);
             this.Controls.Add(this.home);
             this.Controls.Add(this.mapa);
@@ -663,6 +692,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Execucao";
             this.Text = "Execução";
             this.panel1.ResumeLayout(false);

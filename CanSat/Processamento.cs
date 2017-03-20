@@ -28,7 +28,7 @@ namespace CanSat
         private static ChartAreaCollection chartAreas;
         #endregion
 
-        static public SerialPort Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
+        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
         {
             #region Serial
             //Mapa de dados
@@ -84,8 +84,6 @@ namespace CanSat
             #region Mapa
             RodarMapa();
             #endregion
-
-            return serialPort;
         }
 
         #region Funções para Serial
@@ -156,8 +154,16 @@ namespace CanSat
         //Evento de recebimento de dados da serial
         private static void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Thread tratarDadosSerial = new Thread(() => TratarDadosSerial());
-            tratarDadosSerial.Start();
+            //Inicia o thread de tratamento
+            if (serialPort.BytesToRead >= 38)
+            {
+                //Desabilita o evento de recepção enquanto processa
+                serialPort.DataReceived -= SerialPort_DataReceived;
+
+                Thread tratarDadosSerial = new Thread(() => TratarDadosSerial());
+                tratarDadosSerial.Start();
+                tratarDadosSerial.Join();
+            }
         }
 
         //Tretamento de dados da serial
@@ -165,9 +171,6 @@ namespace CanSat
         {
             try
             {
-                //Desabilita o evento de recepção enquanto processa
-                serialPort.DataReceived -= SerialPort_DataReceived;
-
                 //Lê os dados disponíveis
                 int linha_size = serialPort.BytesToRead;
                 byte[] linha = new byte[linha_size];
@@ -185,11 +188,11 @@ namespace CanSat
                 }
 
                 int i = 0;
-                for (int contador = 0; contador < linha.Length; contador++)
+                for (int contador = 0; contador <= (linha.Length-Properties.Settings.Default.bytesInformacao); contador++)
                 {
                     if ((linha[contador] == Convert.ToInt32("11111111", 2)) && (linha[contador+1] == Convert.ToInt32("11111111", 2)))
                     {
-                        for (int j = 0; j < numColunas; j++)
+                        for (int j = 0; (j < (numColunas-1))&&((contador+j)<linha_size); j++)
                         {
                             matriz[i][j] = linha[contador+j];
                         }
@@ -224,14 +227,15 @@ namespace CanSat
                     if((bitsUm%2==0)&&(matriz[i][numColunas-1]==0))
                     {
                         //Altera o primeiro byte do array que está corrompido para 0, para descartá-lo
-                        registrarLog("Tratamento de dados", "Pacote de dados corrompido");
+                        registrarLog("Tratamento de dados", "Pacote de dados corrompido. Paridade inadequada.");
                         matriz[i][0] = 0;
                     }
                 }
 
                 if (linhasPreenchidas < (numLinhas - 1))
                 {
-                    registrarLog("Tratamento de dados", "Pacote de dados corrompido");
+                    registrarLog("Tratamento de dados", "Pacote de dados corrompido. Menos que uma linha.");
+                    serialPort.DataReceived += SerialPort_DataReceived;
                     return;
                 }
                 #endregion
@@ -245,17 +249,17 @@ namespace CanSat
                     {
                         //Mapear dados
                         mapaDados["luminosidade"] = BitConverter.ToInt16(matriz[i], 2)*Properties.Settings.Default.resLuminosidade;
-                        mapaDados["tempExterna"] = BitConverter.ToChar(matriz[i], 4) * Properties.Settings.Default.resTempExt;
-                        mapaDados["tempInterna"] = BitConverter.ToChar(matriz[i], 5) * Properties.Settings.Default.resTempInt;
-                        mapaDados["pressao"] = BitConverter.ToChar(matriz[i], 6) * Properties.Settings.Default.resPressao;
+                        mapaDados["tempExterna"] = (char)matriz[i][4] * Properties.Settings.Default.resTempExt;
+                        mapaDados["tempInterna"] = (char)matriz[i][5] * Properties.Settings.Default.resTempInt;
+                        mapaDados["pressao"] = (char)matriz[i][6] * Properties.Settings.Default.resPressao;
                         mapaDados["aceleracao"] = BitConverter.ToInt16(matriz[i], 7) * Properties.Settings.Default.resAceleracao;
                         mapaDados["longitude"] = -BitConverter.ToInt16(matriz[i], 9) *Properties.Settings.Default.resLongitude+ Properties.Settings.Default.origemLongitude;
                         mapaDados["latitude"] = -BitConverter.ToInt16(matriz[i], 11) * Properties.Settings.Default.resLatitude+Properties.Settings.Default.origemLatitude;
                         mapaDados["altitude"] = BitConverter.ToInt16(matriz[i], 13) * Properties.Settings.Default.resAltitude;
-                        mapaDados["tempo_hora"] = BitConverter.ToChar(matriz[i], 15) * Properties.Settings.Default.resTempoH;
-                        mapaDados["tempo_minuto"] = BitConverter.ToChar(matriz[i], 16) * Properties.Settings.Default.resTempoM;
-                        mapaDados["tempo_segundo"] = BitConverter.ToChar(matriz[i], 17) * Properties.Settings.Default.resTempoS;
-                        mapaDados["velocidade"] = BitConverter.ToChar(matriz[i], 18) * Properties.Settings.Default.resVelocidade;
+                        mapaDados["tempo_hora"] = (char)matriz[i][15] * Properties.Settings.Default.resTempoH;
+                        mapaDados["tempo_minuto"] = (char)matriz[i][16] * Properties.Settings.Default.resTempoM;
+                        mapaDados["tempo_segundo"] = (char)matriz[i][17] * Properties.Settings.Default.resTempoS;
+                        mapaDados["velocidade"] = (char)matriz[i][18] * Properties.Settings.Default.resVelocidade;
 
                         //Plotar dados
                         updateHome();
@@ -289,13 +293,13 @@ namespace CanSat
         //Atualiza os valores instantâneos exibidos na tela de home
         private static void updateHome()
         {
-            homeTextos[0].Text = mapaDados["luminosidade"].ToString();
-            homeTextos[1].Text = mapaDados["latitude"].ToString(); 
-            homeTextos[2].Text = mapaDados["longitude"].ToString(); 
-            homeTextos[3].Text = mapaDados["pressao"].ToString(); 
-            homeTextos[4].Text = mapaDados["tempExterna"].ToString(); 
-            homeTextos[5].Text = mapaDados["tempInterna"].ToString(); 
-            homeTextos[6].Text = mapaDados["velocidade"].ToString(); 
+            homeTextos[0].Invoke(new Action(()=>homeTextos[0].Text = mapaDados["luminosidade"].ToString()));
+            homeTextos[1].Invoke(new Action(() => homeTextos[1].Text = mapaDados["latitude"].ToString()));
+            homeTextos[2].Invoke(new Action(() => homeTextos[2].Text = mapaDados["longitude"].ToString()));
+            homeTextos[3].Invoke(new Action(() => homeTextos[3].Text = mapaDados["pressao"].ToString()));
+            homeTextos[4].Invoke(new Action(() => homeTextos[4].Text = mapaDados["tempExterna"].ToString()));
+            homeTextos[5].Invoke(new Action(() => homeTextos[5].Text = mapaDados["tempInterna"].ToString()));
+            homeTextos[6].Invoke(new Action(() => homeTextos[6].Text = mapaDados["velocidade"].ToString())); 
         }
         #endregion
 
@@ -327,15 +331,20 @@ namespace CanSat
             string linha = "CEXEC" + Properties.Settings.Default.numeroExecucao.ToString("00000") + " - " + DateTime.Now + " - " + grupo + " - " + msg;
 
             //Registra no arquivo local de log
-            StreamWriter log = new StreamWriter(InterfaceGeral.Path + @"\" + Properties.Resources.logFile, true);
-            log.WriteLine(linha);
-            log.Close();
+            try
+            {
+                StreamWriter log = new StreamWriter(InterfaceGeral.Path + @"\" + Properties.Resources.logFile, true);
+                log.WriteLine(linha);
+                log.Close();
+            }
+            catch { }
 
             //Insere o registro no painel de log da execução
-            string texto = logTexto.Text;
+            string texto="";
+            logTexto.BeginInvoke(new MethodInvoker(delegate { texto = logTexto.Text; }));
             linha = linha.Replace("CEXEC" + Properties.Settings.Default.numeroExecucao.ToString("00000") + " - ", "") + "\n";
             texto += linha;
-            logTexto.Text = texto;
+            logTexto.Invoke(new Action(() => logTexto.Text = texto));
         }
         #endregion
 
