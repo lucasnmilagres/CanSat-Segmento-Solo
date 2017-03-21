@@ -57,7 +57,7 @@ namespace CanSat
             homeTextos[6] = textBox7;
 
             //Cria o Thread que processas os dados
-            processamentoThread = new Thread(()=> {Processamento.Inicializar(logTexto, chart1.Series, homeTextos, chart1.ChartAreas, chart1);});
+            processamentoThread = new Thread(()=> {Processamento.Inicializar(logTexto, chart1.Series, homeTextos, chart1.ChartAreas);});
             processamentoThread.Start();
         }
         #endregion

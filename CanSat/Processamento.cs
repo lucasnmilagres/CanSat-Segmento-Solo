@@ -29,7 +29,7 @@ namespace CanSat
         private static Chart chart;
         #endregion
 
-        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas, Chart _chart)
+        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
         {
             #region Serial
             //Mapa de dados
@@ -81,8 +81,6 @@ namespace CanSat
             //Relaciona as ChartAreas às áreas correspondentes
             chartAreas = _chartAreas;
 
-            //Relaciona os gráficos em si
-            chart = _chart;
             #endregion
 
             #region Mapa
@@ -378,7 +376,7 @@ namespace CanSat
 
             //Plotagem dos pontos
             for(int i=0; i<9;i++)
-                   chart.Invoke(new Action(()=>colecoesPontos[i].Add(listaPontos[i])));
+                   colecoesPontos[i].Add(listaPontos[i]);
         }
 
         //Atualiza as miniaturas dos gráficos para a correta exibição dos dados
