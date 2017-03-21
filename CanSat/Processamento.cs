@@ -26,9 +26,10 @@ namespace CanSat
         private static SerialPort serialPort;
         private static DataPointCollection[] colecoesPontos;
         private static ChartAreaCollection chartAreas;
+        private static Chart chart;
         #endregion
 
-        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
+        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas, Chart _chart)
         {
             #region Serial
             //Mapa de dados
@@ -79,6 +80,9 @@ namespace CanSat
 
             //Relaciona as ChartAreas às áreas correspondentes
             chartAreas = _chartAreas;
+
+            //Relaciona os gráficos em si
+            chart = _chart;
             #endregion
 
             #region Mapa
@@ -165,7 +169,7 @@ namespace CanSat
                 tratarDadosSerial.Join();
             }
         }
-
+       
         //Tretamento de dados da serial
         private static void TratarDadosSerial()
         {
@@ -374,7 +378,7 @@ namespace CanSat
 
             //Plotagem dos pontos
             for(int i=0; i<9;i++)
-                colecoesPontos[i].Add(listaPontos[i]);
+                   chart.Invoke(new Action(()=>colecoesPontos[i].Add(listaPontos[i])));
         }
 
         //Atualiza as miniaturas dos gráficos para a correta exibição dos dados
