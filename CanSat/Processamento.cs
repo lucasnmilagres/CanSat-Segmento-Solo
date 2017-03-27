@@ -24,13 +24,14 @@ namespace CanSat
         private static RichTextBox logTexto;
         private static TextBox[] homeTextos;
         private static SerialPort serialPort;
-        private static DataPointCollection[] colecoesPontos;
-        private static ChartAreaCollection chartAreas;
-        private static Chart chart;
+        private static Execucao execucao;
         #endregion
 
-        static public void Inicializar(RichTextBox _logTexto, SeriesCollection series, TextBox[] _homeTextos, ChartAreaCollection _chartAreas)
+        static public void Inicializar(RichTextBox _logTexto, TextBox[] _homeTextos, Execucao _execucao)
         {
+            //Atribui o form de execução a uma cópia local
+            execucao = _execucao;
+
             #region Serial
             //Mapa de dados
             mapaDados = new Dictionary<string, double>(14);
@@ -63,23 +64,11 @@ namespace CanSat
             #endregion
 
             #region Gráficos
-            //Inicializa as colecoes de pontos
-            colecoesPontos = new DataPointCollection[9];
-
-            //Relaciona as coleções de pontos às suas series correspondentes
-            for (int i = 0; i < 9; i++)
-            {
-                colecoesPontos[i] = series[i].Points;
-            }
-
             //Adiciona um ponto inicial na origem do gráfico, por questão estética
-            foreach (DataPointCollection colecao in colecoesPontos)
+            foreach (Series serie in execucao.chart1.Series)
             {
-                colecao.Add(new DataPoint(0, 0));
+                serie.Points.Add(new DataPoint(0, 0));
             }
-
-            //Relaciona as ChartAreas às áreas correspondentes
-            chartAreas = _chartAreas;
 
             #endregion
 
@@ -375,8 +364,8 @@ namespace CanSat
             listaPontos[8] = new DataPoint(mapaDados["altitude"], mapaDados["luminosidade"]);
 
             //Plotagem dos pontos
-            for(int i=0; i<9;i++)
-                   colecoesPontos[i].Add(listaPontos[i]);
+            for (int i = 0; i < 9; i++)
+                execucao.chart1.Invoke(new Action(()=>execucao.chart1.Series[i].Points.Add(listaPontos[i])));
         }
 
         //Atualiza as miniaturas dos gráficos para a correta exibição dos dados
@@ -386,30 +375,31 @@ namespace CanSat
             for(int i=0; i<9; i++)
             {
                 //Seleciona os limites exibidos nos eixos
-                double max_Y = colecoesPontos[i].FindMaxByValue().YValues[0];
-                double min_Y = colecoesPontos[i].FindMinByValue().YValues[0];
+                double max_Y=0, min_Y=0;
+                execucao.chart1.Invoke(new Action(() => max_Y =  execucao.chart1.Series[i].Points.FindMaxByValue().YValues[0]));
+                execucao.chart1.Invoke(new Action(() => min_Y = execucao.chart1.Series[i].Points.FindMinByValue().YValues[0]));
 
                 //Ajusta os eixos da miniatura
-                chartAreas[i].AxisY.Maximum = max_Y+20;
-                chartAreas[i].AxisY.Minimum = min_Y - 20;
+                execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[i].AxisY.Maximum = max_Y + 20));
+                execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[i].AxisY.Minimum = min_Y - 20)); 
             }
 
             //Ajuste do eixo X-Tempo
             double max_X_tempo = (mapaDados["tempo_hora"] * 3600 + mapaDados["tempo_minuto"] * 60 + mapaDados["tempo_segundo"] - mapaDados["tempo_inicial"]);
-            chartAreas[0].AxisX.Maximum = max_X_tempo+100;
-            chartAreas[1].AxisX.Maximum = max_X_tempo + 100;
-            chartAreas[2].AxisX.Maximum = max_X_tempo + 100;
-            chartAreas[3].AxisX.Maximum = max_X_tempo + 100;
-            chartAreas[5].AxisX.Maximum = max_X_tempo + 100;
-            chartAreas[7].AxisX.Maximum = max_X_tempo + 100;
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[0].AxisX.Maximum = max_X_tempo + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[1].AxisX.Maximum = max_X_tempo + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[2].AxisX.Maximum = max_X_tempo + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[3].AxisX.Maximum = max_X_tempo + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[5].AxisX.Maximum = max_X_tempo + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[7].AxisX.Maximum = max_X_tempo + 100));
 
             //Ajuste do eixo X-altitude
-            chartAreas[4].AxisX.Maximum = maxAltitude + 100;
-            chartAreas[4].AxisX.Minimum = minAltitude - 100;
-            chartAreas[6].AxisX.Maximum = maxAltitude + 100;
-            chartAreas[6].AxisX.Minimum = minAltitude - 100;
-            chartAreas[8].AxisX.Maximum = maxAltitude + 100;
-            chartAreas[8].AxisX.Minimum = minAltitude - 100;
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[4].AxisX.Maximum = maxAltitude + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[4].AxisX.Minimum = minAltitude - 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[6].AxisX.Maximum = maxAltitude + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[6].AxisX.Minimum = minAltitude - 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[8].AxisX.Maximum = maxAltitude + 100));
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[8].AxisX.Minimum = minAltitude - 100));
         }
         #endregion
 

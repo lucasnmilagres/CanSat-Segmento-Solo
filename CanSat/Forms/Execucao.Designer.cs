@@ -728,7 +728,7 @@
         private System.Windows.Forms.Panel mapa;
         private System.Windows.Forms.Panel log;
         private System.Windows.Forms.RichTextBox logTexto;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.PictureBox rodar_mapa;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
