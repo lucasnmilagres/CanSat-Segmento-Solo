@@ -52,6 +52,7 @@ namespace CanSat
             mapaDados.Add("tempo_inicial", DateTime.UtcNow.Hour * 3600 + DateTime.UtcNow.Minute * 60 + DateTime.UtcNow.Second);
 
             serialPort.DataReceived += SerialPort_DataReceived;
+            serialPort.DiscardInBuffer();
             #endregion
 
             #region Home
@@ -83,7 +84,7 @@ namespace CanSat
         {
             //Configuração Serial
             serialPort = new SerialPort();
-            serialPort.BaudRate = 9600;
+            serialPort.BaudRate = 115200;
 
             int resultado = OpenSerial();
 
@@ -109,7 +110,7 @@ namespace CanSat
                         //Envia dado para o dispositivo
                         serialPort.WriteLine(Properties.Settings.Default.msgSendSerial);
 
-                        //Aguarda 1seg pela resposta
+                        //Aguarda 0,1seg pela resposta
                         Thread.Sleep(100);
 
                         //Recebe resposta do dispositivo
@@ -146,7 +147,7 @@ namespace CanSat
         private static void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             //Inicia o thread de tratamento
-            if (serialPort.BytesToRead >= 38)
+            if (serialPort.BytesToRead >= 2400)
             {
                 //Desabilita o evento de recepção enquanto processa
                 serialPort.DataReceived -= SerialPort_DataReceived;
@@ -253,13 +254,15 @@ namespace CanSat
                         mapaDados["velocidade"] = (char)matriz[i][18] * Properties.Settings.Default.resVelocidade;
 
                         //Plotar dados
-                        updateHome();
                         plotarPontos();
-                        updateMiniaturas();
-
                         pacotesPlotados++;
                     }
                 }
+                #endregion
+
+                #region Atualizar interface
+                updateHome();
+                updateMiniaturas();
                 #endregion
 
                 #region Registrar File
