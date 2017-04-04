@@ -256,6 +256,9 @@ namespace CanSat
                         //Plotar dados
                         plotarPontos();
                         pacotesPlotados++;
+
+                        //Registrar nos arquivos
+                        plotarFile();
                     }
                 }
                 #endregion
@@ -263,11 +266,7 @@ namespace CanSat
                 #region Atualizar interface
                 updateHome();
                 updateMiniaturas();
-                #endregion
-
-                #region Registrar File
-                plotarFile();
-                #endregion
+                #endregion                
 
                 #region Registrar Log
                 registrarLog("Tratamento de dados", pacotesPlotados.ToString() + " pacotes plotados com sucesso.");
@@ -335,10 +334,10 @@ namespace CanSat
 
             //Insere o registro no painel de log da execução
             string texto="";
-            logTexto.BeginInvoke(new MethodInvoker(delegate { texto = logTexto.Text; }));
+            execucao.logTexto.BeginInvoke(new MethodInvoker(delegate { texto = execucao.logTexto.Text; }));
             linha = linha.Replace("CEXEC" + Properties.Settings.Default.numeroExecucao.ToString("00000") + " - ", "") + "\n";
             texto += linha;
-            logTexto.Invoke(new Action(() => logTexto.Text = texto));
+            execucao.logTexto.Invoke(new Action(() => execucao.logTexto.Text = texto));
         }
         #endregion
 
