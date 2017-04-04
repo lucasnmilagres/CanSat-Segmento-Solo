@@ -184,7 +184,7 @@ namespace CanSat
                 {
                     if ((linha[contador] == Convert.ToInt32("11111111", 2)) && (linha[contador+1] == Convert.ToInt32("11111111", 2)))
                     {
-                        for (int j = 0; (j < (numColunas-1))&&((contador+j)<linha_size); j++)
+                        for (int j = 0; (j < numColunas)&&((contador+j)<linha_size); j++)
                         {
                             matriz[i][j] = linha[contador+j];
                         }
@@ -216,7 +216,7 @@ namespace CanSat
                                 bitsUm++;
                         }
                     }
-                    if((bitsUm%2==0)&&(matriz[i][numColunas-1]==0))
+                    if(((bitsUm%2==0)&&(matriz[i][numColunas-1]==0))||((bitsUm % 2 != 0) && (matriz[i][numColunas - 1] != 0)))
                     {
                         //Altera o primeiro byte do array que está corrompido para 0, para descartá-lo
                         registrarLog("Tratamento de dados", "Pacote de dados corrompido. Paridade inadequada.");
