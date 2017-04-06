@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -21,6 +22,8 @@ namespace CanSat
         private static double maxAltitude;
         private static double minAltitude;
         private static Dictionary<string, double> mapaDados;
+        private static DataSet dataSet1;
+        private static DataTable dataTable1;
         private static RichTextBox logTexto;
         private static TextBox[] homeTextos;
         private static SerialPort serialPort;
@@ -64,13 +67,59 @@ namespace CanSat
             readLogFile();
             #endregion
 
-            #region Gráficos
-            //Adiciona um ponto inicial na origem do gráfico, por questão estética
-            foreach (Series serie in execucao.chart1.Series)
-            {
-                serie.Points.Add(new DataPoint(0, 0));
-            }
+            #region DataSet
+            //Inicializa o dataset
+            dataSet1 = new DataSet();
 
+            //Inicializa o datatable
+            dataTable1 = new DataTable("DadosGrafico");
+            dataTable1.Columns.Add("tempo", typeof(double));
+            dataTable1.Columns.Add("altitude", typeof(double));
+            dataTable1.Columns.Add("luminosidade", typeof(double));
+            dataTable1.Columns.Add("tempExterna", typeof(double));
+            dataTable1.Columns.Add("pressao", typeof(double));
+            dataTable1.Columns.Add("aceleracao", typeof(double));
+            dataTable1.Columns.Add("distancia", typeof(double));
+            dataTable1.Columns.Add("velocidade", typeof(double));
+
+            //Inclui a tabela no dataset
+            dataSet1.Tables.Add(dataTable1);
+            #endregion
+
+            #region Gráficos
+            //Atribui o Dataset como data source dos gráficos
+            execucao.chart1.DataSource = dataSet1;
+
+            //Adiciona um ponto inicial na origem do gráfico, por questão estética
+            dataTable1.Rows.Add(0, 0, 0, 0, 0, 0, 0, 0);
+
+            //Relaciona as colunas do gráfico e os eixos das séries
+            execucao.chart1.Series[0].XValueMember ="tempo";
+            execucao.chart1.Series[0].YValueMembers = "distancia";
+
+            execucao.chart1.Series[1].XValueMember = "tempo";
+            execucao.chart1.Series[1].YValueMembers = "velocidade";
+
+            execucao.chart1.Series[2].XValueMember = "tempo";
+            execucao.chart1.Series[2].YValueMembers = "aceleracao";
+
+            execucao.chart1.Series[3].XValueMember = "tempo";
+            execucao.chart1.Series[3].YValueMembers = "pressao";
+
+            execucao.chart1.Series[4].XValueMember = "altitude";
+            execucao.chart1.Series[4].YValueMembers = "pressao";
+
+            execucao.chart1.Series[5].XValueMember = "tempo";
+            execucao.chart1.Series[5].YValueMembers = "tempExterna";
+
+            execucao.chart1.Series[6].XValueMember = "altitude";
+            execucao.chart1.Series[6].YValueMembers = "tempExterna";
+
+            execucao.chart1.Series[7].XValueMember = "tempo";
+            execucao.chart1.Series[7].YValueMembers = "luminosidade";
+
+            execucao.chart1.Series[8].XValueMember = "altitude";
+            execucao.chart1.Series[8].YValueMembers = "altitude";
             #endregion
 
             #region Mapa
@@ -253,8 +302,14 @@ namespace CanSat
                         mapaDados["tempo_segundo"] = (char)matriz[i][17] * Properties.Settings.Default.resTempoS;
                         mapaDados["velocidade"] = (char)matriz[i][18] * Properties.Settings.Default.resVelocidade;
 
-                        //Plotar dados
-                        plotarPontos();
+                        //Identificação dos limites da altitude
+                        if (mapaDados["altitude"] > maxAltitude)
+                            maxAltitude = mapaDados["altitude"];
+                        else if (mapaDados["altitude"] < minAltitude)
+                            minAltitude = mapaDados["altitude"];
+
+                        //Plotar pontos na tabela
+                        plotarPontos();                      
                         pacotesPlotados++;
 
                         //Registrar nos arquivos
@@ -269,7 +324,7 @@ namespace CanSat
                 #endregion                
 
                 #region Registrar Log
-                registrarLog("Tratamento de dados", pacotesPlotados.ToString() + " pacotes plotados com sucesso.");
+                registrarLog("Tratamento de dados", pacotesPlotados.ToString() + " pacotes adicionados com sucesso.");
                 #endregion
             }
             catch (Exception e)
@@ -341,67 +396,29 @@ namespace CanSat
         }
         #endregion
 
-        #region Funções para Gráficos
-        //Plota os novos pontos dos gráficos
+        #region Funções para DataSet
+        //Plota os novos pontos na tabela
         static public void plotarPontos()
         {
-            //Identificação dos limites da altitude
-            if (mapaDados["altitude"] > maxAltitude)
-                maxAltitude = mapaDados["altitude"];
-            else if (mapaDados["altitude"] < minAltitude)
-                minAltitude = mapaDados["altitude"];
-
-            //Adaptação dos pontos aos gráficos
-            DataPoint[] listaPontos=new DataPoint[9];
-            int tempo = (int)(mapaDados["tempo_hora"] * 3600 + mapaDados["tempo_minuto"] * 60 + mapaDados["tempo_segundo"] -mapaDados["tempo_inicial"]);
+            int tempo = (int)(mapaDados["tempo_hora"] * 3600 + mapaDados["tempo_minuto"] * 60 + mapaDados["tempo_segundo"] - mapaDados["tempo_inicial"]);
             double distancia = 6371 * Math.Acos(Math.Cos(Math.PI * (90 - mapaDados["longitude"]) / 180) * Math.Cos((90 - Properties.Settings.Default.origemLongitude) * Math.PI / 180) + Math.Sin((90 - mapaDados["longitude"]) * Math.PI / 180) * Math.Sin((90 - Properties.Settings.Default.origemLongitude) * Math.PI / 180) * Math.Cos((Properties.Settings.Default.origemLatitude - mapaDados["latitude"]) * Math.PI / 180));
-            listaPontos[0] =new DataPoint(tempo, distancia);
-            listaPontos[1] = new DataPoint(tempo, mapaDados["velocidade"]);
-            listaPontos[2] = new DataPoint(tempo, mapaDados["aceleracao"]);
-            listaPontos[3] = new DataPoint(tempo, mapaDados["pressao"]);
-            listaPontos[4] = new DataPoint(mapaDados["altitude"], mapaDados["pressao"]);
-            listaPontos[5] = new DataPoint(tempo, mapaDados["tempExterna"]);
-            listaPontos[6] = new DataPoint(mapaDados["altitude"], mapaDados["tempExterna"]);
-            listaPontos[7] = new DataPoint(tempo, mapaDados["luminosidade"]);
-            listaPontos[8] = new DataPoint(mapaDados["altitude"], mapaDados["luminosidade"]);
 
-            //Plotagem dos pontos
-            for (int i = 0; i < 9; i++)
-                execucao.chart1.Invoke(new Action(()=>execucao.chart1.Series[i].Points.Add(listaPontos[i])));
+            dataTable1.Rows.Add(tempo, mapaDados["altitude"], mapaDados["luminosidade"], mapaDados["tempExterna"], mapaDados["pressao"], mapaDados["aceleracao"], distancia, mapaDados["velocidade"]);
         }
+        #endregion
 
+        #region Funções para Gráficos
         //Atualiza as miniaturas dos gráficos para a correta exibição dos dados
         static public void updateMiniaturas()
         {
-            //Ajuste do eixo Y
-            for(int i=0; i<9; i++)
+            //DataBind do gráfico
+            execucao.chart1.Invoke(new Action(() => execucao.chart1.DataBind()));
+            
+            //Ajuste dos eixos
+            for (int i=0; i<9; i++)
             {
-                //Seleciona os limites exibidos nos eixos
-                double max_Y=0, min_Y=0;
-                execucao.chart1.Invoke(new Action(() => max_Y =  execucao.chart1.Series[i].Points.FindMaxByValue().YValues[0]));
-                execucao.chart1.Invoke(new Action(() => min_Y = execucao.chart1.Series[i].Points.FindMinByValue().YValues[0]));
-
-                //Ajusta os eixos da miniatura
-                execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[i].AxisY.Maximum = max_Y + 20));
-                execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[i].AxisY.Minimum = min_Y - 20)); 
+                execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[i].RecalculateAxesScale()));
             }
-
-            //Ajuste do eixo X-Tempo
-            double max_X_tempo = (mapaDados["tempo_hora"] * 3600 + mapaDados["tempo_minuto"] * 60 + mapaDados["tempo_segundo"] - mapaDados["tempo_inicial"]);
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[0].AxisX.Maximum = max_X_tempo + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[1].AxisX.Maximum = max_X_tempo + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[2].AxisX.Maximum = max_X_tempo + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[3].AxisX.Maximum = max_X_tempo + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[5].AxisX.Maximum = max_X_tempo + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[7].AxisX.Maximum = max_X_tempo + 100));
-
-            //Ajuste do eixo X-altitude
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[4].AxisX.Maximum = maxAltitude + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[4].AxisX.Minimum = minAltitude - 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[6].AxisX.Maximum = maxAltitude + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[6].AxisX.Minimum = minAltitude - 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[8].AxisX.Maximum = maxAltitude + 100));
-            execucao.chart1.Invoke(new Action(() => execucao.chart1.ChartAreas[8].AxisX.Minimum = minAltitude - 100));
         }
         #endregion
 
@@ -433,7 +450,7 @@ namespace CanSat
                 local.WriteLine(linha_file);
                 local.Close();
 
-                registrarLog("Registro de dados", "Registrado em arquivo local com êxito.");
+             //   registrarLog("Registro de dados", "Registrado em arquivo local com êxito.");
             }
             catch (Exception e)
             {
@@ -452,17 +469,6 @@ namespace CanSat
             catch (Exception e)
             {
                 registrarLog("Registro de dados", "Erro no registro em arquivo removível. "+e.Message);
-            }
-
-            //Salvar em database
-            string resposta = SendRequest(Properties.Settings.Default.urlEscreverDatabase+linha_database);
-            if ((resposta != null)&&(!resposta.Contains("ERROR")))
-            {
-                registrarLog("Registro de dados", "Registrado no servidor local com êxito.");
-            }
-            else
-            {
-                registrarLog("Registro de dados", "Erro no registro no servidor local.");
             }
         }
 
@@ -502,7 +508,7 @@ namespace CanSat
             #endregion
 
             updateHome();
-            plotarPontos();
+            //plotarPontos();
             updateMiniaturas();
             plotarFile();
         }
