@@ -98,7 +98,7 @@ namespace CanSat
             dialog.ShowDialog();
 
             //Exibe diálogo de erro para o caso de erro do usuário
-            if ((dialog.SelectedPath == "") || (dialog.SelectedPath.Contains("C:")))
+            if ((dialog.SelectedPath == "") || (dialog.SelectedPath.Contains("g:")))
             {
                 ErroRemovivel erroRemovivel = new ErroRemovivel();
                 this.AddOwnedForm(erroRemovivel);

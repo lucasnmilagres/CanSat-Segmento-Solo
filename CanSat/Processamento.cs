@@ -144,7 +144,7 @@ namespace CanSat
         public static int OpenSerial()
         {
             //Pesquisa da porta do dispositivo
-            for (int porta = 0; porta <= 10; porta++)
+            for (int porta = 0; porta <= 20; porta++)
             {
                 try
                 {
@@ -196,7 +196,7 @@ namespace CanSat
         private static void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             //Inicia o thread de tratamento
-            if (serialPort.BytesToRead >= 2400)
+            if (serialPort.BytesToRead >= 240)
             {
                 //Desabilita o evento de recepção enquanto processa
                 serialPort.DataReceived -= SerialPort_DataReceived;
