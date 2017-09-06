@@ -66,13 +66,13 @@
       <Value Profile="(Default)">-196.342</Value>
     </Setting>
     <Setting Name="urlEscreverDatabase" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:8080/Canastra/php/escreverDatabase.php?</Value>
+      <Value Profile="(Default)">http://localhost:80/Database-Canastra/php/escreverDatabase.php?</Value>
     </Setting>
     <Setting Name="urlEscreverExecucao" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="urlServidorLocal" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:8080/Canastra</Value>
+      <Value Profile="(Default)">http://localhost:80/Database-Canastra</Value>
     </Setting>
     <Setting Name="prefixoImgGrafico" Type="System.String" Scope="Application">
       <Value Profile="(Default)">grafico_pic</Value>

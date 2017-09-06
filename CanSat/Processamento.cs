@@ -53,7 +53,7 @@ namespace CanSat
             mapaDados.Add("tempo_segundo", 0);
             mapaDados.Add("velocidade", 0);
             mapaDados.Add("tempo_inicial", DateTime.UtcNow.Hour * 3600 + DateTime.UtcNow.Minute * 60 + DateTime.UtcNow.Second);
-
+            
             serialPort.DataReceived += SerialPort_DataReceived;
             serialPort.DiscardInBuffer();
             #endregion
@@ -64,7 +64,7 @@ namespace CanSat
 
             #region Log
             logTexto = _logTexto;
-            readLogFile();
+            //readLogFile();
             #endregion
 
             #region DataSet
@@ -425,7 +425,7 @@ namespace CanSat
         #region Funções para Mapa
         static public void RodarMapa()
         {
-     //       Process.Start(Properties.Resources.localChrome, Properties.Resources.enderecoMapa+"?CEXEC=CEXEC"+Properties.Settings.Default.numeroExecucao.ToString("00000"));
+            Process.Start(Properties.Resources.localChrome, Properties.Resources.enderecoMapa+"?CEXEC=CEXEC"+Properties.Settings.Default.numeroExecucao.ToString("00000"));
         }
         #endregion
 
@@ -470,6 +470,17 @@ namespace CanSat
             {
                 registrarLog("Registro de dados", "Erro no registro em arquivo removível. "+e.Message);
             }
+
+            // Salvar em database
+            string resposta = SendRequest(Properties.Settings.Default.urlEscreverDatabase + linha_database);
+            if ((resposta != null) && (!resposta.Contains("ERROR")))
+            {
+                registrarLog("Registro de dados", "Registrado no servidor local com êxito.");
+            }
+            else
+            {
+                registrarLog("Registro de dados", "Erro no registro no servidor local.");
+            }
         }
 
         //Envia a requisição de comunicação para o database
@@ -508,7 +519,7 @@ namespace CanSat
             #endregion
 
             updateHome();
-            //plotarPontos();
+            plotarPontos();
             updateMiniaturas();
             plotarFile();
         }

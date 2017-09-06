@@ -49,7 +49,7 @@
             this.menuArmazenar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuArmazenar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuArmazenar.Location = new System.Drawing.Point(78, 127);
-            this.menuArmazenar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuArmazenar.Margin = new System.Windows.Forms.Padding(2);
             this.menuArmazenar.Name = "menuArmazenar";
             this.menuArmazenar.Size = new System.Drawing.Size(89, 83);
             this.menuArmazenar.TabIndex = 0;
@@ -63,8 +63,8 @@
             this.menuConectar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuConectar.Cursor = System.Windows.Forms.Cursors.Default;
             this.menuConectar.Enabled = false;
-            this.menuConectar.Location = new System.Drawing.Point(21, 220);
-            this.menuConectar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuConectar.Location = new System.Drawing.Point(21, 219);
+            this.menuConectar.Margin = new System.Windows.Forms.Padding(2);
             this.menuConectar.Name = "menuConectar";
             this.menuConectar.Size = new System.Drawing.Size(89, 83);
             this.menuConectar.TabIndex = 1;
@@ -79,8 +79,8 @@
             this.menuExecutar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuExecutar.Cursor = System.Windows.Forms.Cursors.Default;
             this.menuExecutar.Enabled = false;
-            this.menuExecutar.Location = new System.Drawing.Point(132, 221);
-            this.menuExecutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuExecutar.Location = new System.Drawing.Point(133, 219);
+            this.menuExecutar.Margin = new System.Windows.Forms.Padding(2);
             this.menuExecutar.Name = "menuExecutar";
             this.menuExecutar.Size = new System.Drawing.Size(89, 83);
             this.menuExecutar.TabIndex = 2;
@@ -107,7 +107,7 @@
             this.menuEncerrar.BackColor = System.Drawing.Color.Transparent;
             this.menuEncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuEncerrar.Location = new System.Drawing.Point(195, 29);
-            this.menuEncerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuEncerrar.Margin = new System.Windows.Forms.Padding(2);
             this.menuEncerrar.Name = "menuEncerrar";
             this.menuEncerrar.Size = new System.Drawing.Size(16, 17);
             this.menuEncerrar.TabIndex = 4;
@@ -119,7 +119,7 @@
             this.menuMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.menuMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuMinimizar.Location = new System.Drawing.Point(169, 29);
-            this.menuMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.menuMinimizar.Name = "menuMinimizar";
             this.menuMinimizar.Size = new System.Drawing.Size(16, 17);
             this.menuMinimizar.TabIndex = 5;
@@ -143,7 +143,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu";
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.menuArmazenar)).EndInit();

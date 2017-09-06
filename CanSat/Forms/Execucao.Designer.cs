@@ -125,7 +125,7 @@
             // 
             this.mapaBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mapaBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mapaBotao.Location = new System.Drawing.Point(124, 283);
+            this.mapaBotao.Location = new System.Drawing.Point(124, 282);
             this.mapaBotao.Margin = new System.Windows.Forms.Padding(2);
             this.mapaBotao.Name = "mapaBotao";
             this.mapaBotao.Size = new System.Drawing.Size(84, 79);
@@ -609,11 +609,14 @@
             // 
             // rodar_mapa
             // 
+            this.rodar_mapa.BackgroundImage = global::CanSat.Properties.Resources.mapa;
+            this.rodar_mapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rodar_mapa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rodar_mapa.Location = new System.Drawing.Point(143, 96);
+            this.rodar_mapa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rodar_mapa.Location = new System.Drawing.Point(0, 0);
             this.rodar_mapa.Margin = new System.Windows.Forms.Padding(2);
             this.rodar_mapa.Name = "rodar_mapa";
-            this.rodar_mapa.Size = new System.Drawing.Size(80, 40);
+            this.rodar_mapa.Size = new System.Drawing.Size(370, 248);
             this.rodar_mapa.TabIndex = 0;
             this.rodar_mapa.TabStop = false;
             this.rodar_mapa.Click += new System.EventHandler(this.rodar_mapa_Click);

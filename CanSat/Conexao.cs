@@ -24,7 +24,6 @@ namespace CanSat
             //Chamada da janela de espera de conexão
             Conectando conectando = new Conectando();
             menu.AddOwnedForm(conectando);
-            menu.Enabled = false;
             conectando.Show();
 
             #region Conexão
