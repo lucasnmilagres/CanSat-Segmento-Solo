@@ -48,9 +48,10 @@
             this.menuArmazenar.BackgroundImage = global::CanSat.Properties.Resources.Botão_menu_inicial_armazenamento_habilitado;
             this.menuArmazenar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuArmazenar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuArmazenar.Location = new System.Drawing.Point(97, 159);
+            this.menuArmazenar.Location = new System.Drawing.Point(78, 127);
+            this.menuArmazenar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuArmazenar.Name = "menuArmazenar";
-            this.menuArmazenar.Size = new System.Drawing.Size(111, 104);
+            this.menuArmazenar.Size = new System.Drawing.Size(89, 83);
             this.menuArmazenar.TabIndex = 0;
             this.menuArmazenar.TabStop = false;
             this.menuArmazenar.Click += new System.EventHandler(this.menuArmazenar_Click);
@@ -62,9 +63,10 @@
             this.menuConectar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuConectar.Cursor = System.Windows.Forms.Cursors.Default;
             this.menuConectar.Enabled = false;
-            this.menuConectar.Location = new System.Drawing.Point(26, 275);
+            this.menuConectar.Location = new System.Drawing.Point(21, 220);
+            this.menuConectar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuConectar.Name = "menuConectar";
-            this.menuConectar.Size = new System.Drawing.Size(111, 104);
+            this.menuConectar.Size = new System.Drawing.Size(89, 83);
             this.menuConectar.TabIndex = 1;
             this.menuConectar.TabStop = false;
             this.menuConectar.Visible = false;
@@ -77,9 +79,10 @@
             this.menuExecutar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuExecutar.Cursor = System.Windows.Forms.Cursors.Default;
             this.menuExecutar.Enabled = false;
-            this.menuExecutar.Location = new System.Drawing.Point(165, 276);
+            this.menuExecutar.Location = new System.Drawing.Point(132, 221);
+            this.menuExecutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuExecutar.Name = "menuExecutar";
-            this.menuExecutar.Size = new System.Drawing.Size(111, 104);
+            this.menuExecutar.Size = new System.Drawing.Size(89, 83);
             this.menuExecutar.TabIndex = 2;
             this.menuExecutar.TabStop = false;
             this.menuExecutar.Visible = false;
@@ -89,11 +92,12 @@
             // 
             this.menuAjuda.AutoSize = true;
             this.menuAjuda.BackColor = System.Drawing.Color.Transparent;
-            this.menuAjuda.Font = new System.Drawing.Font("BankGothic Lt BT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAjuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAjuda.ForeColor = System.Drawing.Color.White;
-            this.menuAjuda.Location = new System.Drawing.Point(122, 417);
+            this.menuAjuda.Location = new System.Drawing.Point(98, 334);
+            this.menuAjuda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.menuAjuda.Name = "menuAjuda";
-            this.menuAjuda.Size = new System.Drawing.Size(58, 14);
+            this.menuAjuda.Size = new System.Drawing.Size(39, 13);
             this.menuAjuda.TabIndex = 3;
             this.menuAjuda.Text = "Ajuda";
             this.menuAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -102,9 +106,10 @@
             // 
             this.menuEncerrar.BackColor = System.Drawing.Color.Transparent;
             this.menuEncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuEncerrar.Location = new System.Drawing.Point(244, 36);
+            this.menuEncerrar.Location = new System.Drawing.Point(195, 29);
+            this.menuEncerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuEncerrar.Name = "menuEncerrar";
-            this.menuEncerrar.Size = new System.Drawing.Size(20, 21);
+            this.menuEncerrar.Size = new System.Drawing.Size(16, 17);
             this.menuEncerrar.TabIndex = 4;
             this.menuEncerrar.TabStop = false;
             this.menuEncerrar.Click += new System.EventHandler(this.menuEncerrar_Click);
@@ -113,21 +118,22 @@
             // 
             this.menuMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.menuMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuMinimizar.Location = new System.Drawing.Point(211, 36);
+            this.menuMinimizar.Location = new System.Drawing.Point(169, 29);
+            this.menuMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuMinimizar.Name = "menuMinimizar";
-            this.menuMinimizar.Size = new System.Drawing.Size(20, 21);
+            this.menuMinimizar.Size = new System.Drawing.Size(16, 17);
             this.menuMinimizar.TabIndex = 5;
             this.menuMinimizar.TabStop = false;
             this.menuMinimizar.Click += new System.EventHandler(this.menuMinimizar_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImage = global::CanSat.Properties.Resources.Menu_Inicial;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(304, 446);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(243, 357);
             this.Controls.Add(this.menuMinimizar);
             this.Controls.Add(this.menuEncerrar);
             this.Controls.Add(this.menuAjuda);
@@ -137,6 +143,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.menuArmazenar)).EndInit();
