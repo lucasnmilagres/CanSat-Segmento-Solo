@@ -38,9 +38,10 @@
             // 
             this.encerrarBotao.BackColor = System.Drawing.Color.Transparent;
             this.encerrarBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.encerrarBotao.Location = new System.Drawing.Point(160, 177);
+            this.encerrarBotao.Location = new System.Drawing.Point(120, 144);
+            this.encerrarBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.encerrarBotao.Name = "encerrarBotao";
-            this.encerrarBotao.Size = new System.Drawing.Size(69, 67);
+            this.encerrarBotao.Size = new System.Drawing.Size(52, 54);
             this.encerrarBotao.TabIndex = 0;
             this.encerrarBotao.TabStop = false;
             this.encerrarBotao.Click += new System.EventHandler(this.encerrarButton_Click);
@@ -49,25 +50,27 @@
             // 
             this.cancelarBotao.BackColor = System.Drawing.Color.Transparent;
             this.cancelarBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelarBotao.Location = new System.Drawing.Point(370, 177);
+            this.cancelarBotao.Location = new System.Drawing.Point(278, 144);
+            this.cancelarBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancelarBotao.Name = "cancelarBotao";
-            this.cancelarBotao.Size = new System.Drawing.Size(69, 67);
+            this.cancelarBotao.Size = new System.Drawing.Size(52, 54);
             this.cancelarBotao.TabIndex = 1;
             this.cancelarBotao.TabStop = false;
             this.cancelarBotao.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // ConfirmarSaida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImage = global::CanSat.Properties.Resources.Deseja_sair;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(600, 300);
+            this.ClientSize = new System.Drawing.Size(450, 244);
             this.Controls.Add(this.cancelarBotao);
             this.Controls.Add(this.encerrarBotao);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConfirmarSaida";
             this.Text = "ConfirmarSaida";
             ((System.ComponentModel.ISupportInitialize)(this.encerrarBotao)).EndInit();

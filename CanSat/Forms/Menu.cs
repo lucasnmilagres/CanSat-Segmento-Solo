@@ -109,9 +109,7 @@ namespace CanSat
             else
             {
                 //Executar o diálogo informativo
-                InformativoArmazenamento informativoArmazenamento = new InformativoArmazenamento();
-                this.AddOwnedForm(informativoArmazenamento);
-                informativoArmazenamento.Show();
+                MessageBox.Show("Êxito na seleção do dispositivo removível. Os dados também estão sendo salvos em Documentos/Registros Canastra");
 
                 //Registrar no Log
                 string nomeArquivo = DateTime.Now + " - Cansat.txt";
@@ -139,9 +137,7 @@ namespace CanSat
             menuConectar.Cursor = Cursors.Default;
 
             //Chama o form de conexão
-            Conexao conexao = new Conexao();
-            this.AddOwnedForm(conexao);
-            conexao.Show();
+            Conexao.Conectar(this);
         }
 
         private void menuExecutar_Click(object sender, EventArgs e)

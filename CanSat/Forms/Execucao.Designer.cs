@@ -106,17 +106,17 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 531);
+            this.panel1.Size = new System.Drawing.Size(238, 531);
             this.panel1.TabIndex = 0;
             // 
             // logBotao
             // 
             this.logBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.logBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logBotao.Location = new System.Drawing.Point(129, 386);
+            this.logBotao.Location = new System.Drawing.Point(124, 381);
             this.logBotao.Margin = new System.Windows.Forms.Padding(2);
             this.logBotao.Name = "logBotao";
-            this.logBotao.Size = new System.Drawing.Size(71, 64);
+            this.logBotao.Size = new System.Drawing.Size(84, 76);
             this.logBotao.TabIndex = 3;
             this.logBotao.TabStop = false;
             this.logBotao.Click += new System.EventHandler(this.logBotao_Click);
@@ -125,10 +125,10 @@
             // 
             this.mapaBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mapaBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mapaBotao.Location = new System.Drawing.Point(129, 287);
+            this.mapaBotao.Location = new System.Drawing.Point(124, 283);
             this.mapaBotao.Margin = new System.Windows.Forms.Padding(2);
             this.mapaBotao.Name = "mapaBotao";
-            this.mapaBotao.Size = new System.Drawing.Size(71, 64);
+            this.mapaBotao.Size = new System.Drawing.Size(84, 79);
             this.mapaBotao.TabIndex = 2;
             this.mapaBotao.TabStop = false;
             this.mapaBotao.Click += new System.EventHandler(this.mapaBotao_Click);
@@ -137,10 +137,10 @@
             // 
             this.graficosBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.graficosBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.graficosBotao.Location = new System.Drawing.Point(129, 191);
+            this.graficosBotao.Location = new System.Drawing.Point(124, 188);
             this.graficosBotao.Margin = new System.Windows.Forms.Padding(2);
             this.graficosBotao.Name = "graficosBotao";
-            this.graficosBotao.Size = new System.Drawing.Size(71, 64);
+            this.graficosBotao.Size = new System.Drawing.Size(84, 78);
             this.graficosBotao.TabIndex = 1;
             this.graficosBotao.TabStop = false;
             this.graficosBotao.Click += new System.EventHandler(this.graficosBotao_Click);
@@ -151,10 +151,10 @@
             this.homeBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.homeBotao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homeBotao.Enabled = false;
-            this.homeBotao.Location = new System.Drawing.Point(129, 94);
+            this.homeBotao.Location = new System.Drawing.Point(124, 90);
             this.homeBotao.Margin = new System.Windows.Forms.Padding(2);
             this.homeBotao.Name = "homeBotao";
-            this.homeBotao.Size = new System.Drawing.Size(71, 64);
+            this.homeBotao.Size = new System.Drawing.Size(84, 78);
             this.homeBotao.TabIndex = 0;
             this.homeBotao.TabStop = false;
             this.homeBotao.Click += new System.EventHandler(this.homeBotao_Click);

@@ -36,3 +36,22 @@ C:\Users\Alfa\Documents\Segmento solo\CanSat-Segmento-Solo\CanSat\obj\Debug\CanS
 C:\Users\Alfa\Documents\Segmento solo\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Menu.resources
 C:\Users\Alfa\Documents\Segmento solo\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Properties.Resources.resources
 C:\Users\Alfa\Documents\Segmento solo\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.csproj.GenerateResource.Cache
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\bin\Debug\CanSat1.exe.config
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\bin\Debug\CanSat1.exe
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\bin\Debug\CanSat1.pdb
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.csprojResolveAssemblyReference.cache
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Dialogs.Conectando.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.ConfirmarSaida.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Dialogs.ErroConexao.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.ErroRemovivel.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.InformativoArmazenamento.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Dialogs.SucessoConexao.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Execucao.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Forms.Grafico.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.SplashScreen.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Menu.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.Properties.Resources.resources
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.csproj.GenerateResource.Cache
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat.csproj.CoreCompileInputs.cache
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat1.exe
+C:\Users\Projeto\Documents\GitHub\CanSat-Segmento-Solo\CanSat\obj\Debug\CanSat1.pdb

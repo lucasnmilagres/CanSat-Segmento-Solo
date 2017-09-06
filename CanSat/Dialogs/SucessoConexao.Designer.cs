@@ -39,25 +39,27 @@
             this.okBotao.BackgroundImage = global::CanSat.Properties.Resources.Botão_ok_habilitado_pequeno;
             this.okBotao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.okBotao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.okBotao.Location = new System.Drawing.Point(435, 204);
+            this.okBotao.Location = new System.Drawing.Point(326, 166);
+            this.okBotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.okBotao.Name = "okBotao";
-            this.okBotao.Size = new System.Drawing.Size(74, 68);
+            this.okBotao.Size = new System.Drawing.Size(56, 55);
             this.okBotao.TabIndex = 0;
             this.okBotao.TabStop = false;
             this.okBotao.Click += new System.EventHandler(this.okBotao_Click);
             // 
             // SucessoConexao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImage = global::CanSat.Properties.Resources.Conectado_com_sucesso;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(603, 302);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(452, 245);
             this.Controls.Add(this.okBotao);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SucessoConexao";
             this.Text = "SucessoConexao";
             ((System.ComponentModel.ISupportInitialize)(this.okBotao)).EndInit();

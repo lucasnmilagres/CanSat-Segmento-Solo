@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexao.cs" />
     <Compile Include="Dialogs\Conectando.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +96,6 @@
     </Compile>
     <Compile Include="Dialogs\SucessoConexao.Designer.cs">
       <DependentUpon>SucessoConexao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Conexao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Conexao.Designer.cs">
-      <DependentUpon>Conexao.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Execucao.cs">
       <SubType>Form</SubType>
@@ -154,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\SucessoConexao.resx">
       <DependentUpon>SucessoConexao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Conexao.resx">
-      <DependentUpon>Conexao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Execucao.resx">
       <DependentUpon>Execucao.cs</DependentUpon>

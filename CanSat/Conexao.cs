@@ -6,12 +6,12 @@ namespace CanSat
     abstract class Conexao
     {
         #region Variáveis Globais
-        int conexao = 0;
-        Menu menu;
+        static int conexao = 0;
+        static Menu menu;
         #endregion
 
         #region Inicialização
-        public Conexao(Menu _menu)
+        static public void Conectar(Menu _menu)
         {
             menu = _menu;
             okBotao_Click();
@@ -19,7 +19,7 @@ namespace CanSat
         #endregion
 
         #region Eventos Principais
-        private void okBotao_Click()
+        static private void okBotao_Click()
         {
             //Chamada da janela de espera de conexão
             Conectando conectando = new Conectando();
@@ -34,7 +34,7 @@ namespace CanSat
         }
 
         //Registro de resposta e feedback para usuário
-        public void conexaoFeedback()
+        static public void conexaoFeedback()
         {
             if (conexao == 0)
             {
@@ -65,3 +65,4 @@ namespace CanSat
         #endregion
     }
 }
+

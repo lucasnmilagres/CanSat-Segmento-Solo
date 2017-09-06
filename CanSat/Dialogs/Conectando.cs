@@ -25,7 +25,7 @@ namespace CanSat.Dialogs
             if (loading.Width >= (this.Width - 2 * loading.Location.X))
             {
                 loading.Text = "";
-                ((Conexao)this.Owner).conexaoFeedback();
+                Conexao.conexaoFeedback();
                 Close();
             }
         }
